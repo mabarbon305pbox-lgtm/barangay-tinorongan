@@ -1,0 +1,106 @@
+/* ===== Colors (edit here to change the theme) ===== */
+:root{
+  --dark:#14532d; --mid:#2e7d32; --light:#e8f5e9;
+  --gold:#f4b400; --gray:#f3f5f4; --text:#243027;
+}
+body{background:var(--gray);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif}
+.text-green{color:var(--dark)}
+.btn-brand{background:var(--mid);color:#fff;border:0}
+.btn-brand:hover,.btn-brand:active{background:var(--dark);color:#fff}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#222;border:0}
+.btn-gold:hover{background:#d99f00}
+
+/* ===== Login ===== */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;
+  background:linear-gradient(160deg,var(--dark),var(--mid) 70%,var(--gold) 160%)}
+.login-card{background:#fff;border-radius:20px;padding:28px;max-width:420px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.login-logo{width:90px;height:90px;object-fit:contain}
+.brand-title{font-size:1.4rem;font-weight:800;color:var(--dark);margin:8px 0 0}
+.brand-sub{font-weight:600;color:var(--mid)}
+.tagline{color:#b88700;font-style:italic;margin:4px 0 8px}
+.role-switch{display:flex;gap:8px}
+.role-switch button{flex:1;border:2px solid #cfd8d1;background:#fff;border-radius:12px;padding:8px;font-weight:600}
+.role-switch button.active{border-color:var(--mid);background:var(--light);color:var(--dark)}
+
+/* ===== Layout ===== */
+.sidebar{position:fixed;top:0;bottom:0;left:0;width:250px;background:var(--dark);color:#fff;padding:16px 12px;z-index:1040;
+  overflow-y:auto;transition:transform .25s;display:flex;flex-direction:column}
+.side-brand{text-align:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:12px}
+.side-brand img{width:64px;height:64px;object-fit:contain}
+.side-brand b{display:block;margin-top:6px;letter-spacing:.5px}
+.side-brand small{color:var(--gold)}
+.nav-btn{display:flex;gap:10px;align-items:center;width:100%;background:none;border:0;color:#dfeee2;text-align:left;padding:10px 12px;border-radius:10px;margin-bottom:2px}
+.nav-btn:hover{background:rgba(255,255,255,.1)}
+.nav-btn.active{background:var(--gold);color:#222;font-weight:600}
+.main{margin-left:250px}
+.topbar{position:sticky;top:0;z-index:1000;background:#fff;display:flex;align-items:center;gap:10px;padding:8px 16px;border-bottom:3px solid var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.top-logo{width:42px;height:42px;object-fit:contain}
+.user-chip{background:var(--light);color:var(--dark);padding:6px 12px;border-radius:20px;font-weight:600;font-size:.9rem}
+.content{padding:22px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1030}
+@media(max-width:991px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:none}
+  .overlay.show{display:block}
+  .main{margin-left:0}
+  .content{padding:14px}
+}
+
+/* ===== Cards, tables ===== */
+.card-box{background:#fff;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:16px}
+.stat{border-radius:16px;padding:16px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);border-left:6px solid var(--mid);height:100%}
+.stat .num{font-size:2rem;font-weight:800;color:var(--dark);line-height:1}
+.stat i{font-size:1.6rem;color:var(--mid);float:right}
+.page-title{color:var(--dark);font-weight:800;margin-bottom:2px}
+.table thead{background:var(--light)}
+.table-wrap{overflow-x:auto}
+
+/* ===== Status badges ===== */
+.badge-status{padding:4px 10px;border-radius:20px;font-size:.78rem;font-weight:600;white-space:nowrap;display:inline-block}
+.st-Pending{background:#fff1d6;color:#a66300}
+.st-Verified{background:#d8f3dc;color:#1b6b2f}
+.st-Processing{background:#dbeafe;color:#1d4ed8}
+.st-ReadyforClaiming{background:#ede0fb;color:#6d28d9}
+.st-Released{background:#b7e4c7;color:#0b4d22}
+.st-Rejected{background:#fde2e2;color:#b91c1c}
+
+/* ===== Timeline ===== */
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{position:relative;padding:6px 0 6px 38px;color:#8a948d}
+.timeline li::before{content:"";position:absolute;left:8px;top:10px;width:16px;height:16px;border-radius:50%;background:#cfd8d1}
+.timeline li::after{content:"";position:absolute;left:15px;top:26px;width:2px;height:calc(100% - 10px);background:#cfd8d1}
+.timeline li:last-child::after{display:none}
+.timeline li.done{color:var(--dark)}
+.timeline li.done::before,.timeline li.done::after{background:var(--mid)}
+.timeline li.current{color:#000;font-weight:700}
+.timeline li.current::before{background:var(--gold);box-shadow:0 0 0 4px rgba(244,180,0,.35)}
+
+/* ===== Chart ===== */
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.9rem}
+.bar-row span:first-child{width:130px}
+.bar{height:18px;border-radius:9px;background:var(--mid);min-width:4px}
+
+/* ===== Notifications ===== */
+.notif{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #eee}
+.notif i{color:var(--mid);font-size:1.2rem}
+
+/* ===== Certificate preview ===== */
+.cert{background:#fff;border:3px double var(--dark);padding:28px;text-align:center;font-family:Georgia,serif}
+.cert img{width:80px;height:80px;object-fit:contain}
+.cert h4{letter-spacing:2px;color:var(--dark);margin:16px 0}
+.cert p{text-align:justify;text-indent:2em}
+.sign{margin-top:36px;text-align:right}
+
+/* ===== Toast ===== */
+.toast-msg{position:fixed;bottom:20px;right:20px;background:var(--dark);color:#fff;padding:12px 18px;border-radius:12px;z-index:2000;
+  box-shadow:0 4px 14px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .3s;max-width:90vw}
+.toast-msg.show{opacity:1}
+
+/* ===== Print: only the certificate ===== */
+@media print{
+  body *{visibility:hidden}
+  .cert,.cert *{visibility:visible}
+  .cert{position:absolute;left:0;top:0;width:100%}
+  .modal{position:absolute!important;overflow:visible!important}
+}
